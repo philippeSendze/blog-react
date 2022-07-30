@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+:root {
+    --blue: #2a5ead;
+    --white: #fafafa;
+    --secondary-blue: #447ebe;
+    --transition: 0.5s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+.app {
+    background-color: var(--white);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.mx-3 {
+    margin: 0 1.5rem;
+}
+
+.py-3 {
+    padding: 3rem 0;
+}
+
+
+@media only screen and (min-device-width: 280px) and (max-device-width:1080px) {
+    html,
+    body,
+    .app {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .app::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media only screen and (min-device-width: 1200px) {
+    .mx-3 {
+        margin: 0 5rem;
+    }
+}
