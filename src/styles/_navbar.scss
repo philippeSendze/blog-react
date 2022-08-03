@@ -1,13 +1,19 @@
 nav {
   transition: var(--transition);
 
-  .py-3 {
-    padding: 2rem 0;
-  }
 
   .container {
     display: flex;
     justify-content: flex-end;
+    min-height: 2.9rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .container-with-logo {
+    display: flex;
+    justify-content: space-between;
+    min-height: 2.9rem;
+    padding: 0.9rem 1rem;
   }
 
   .links-container {
@@ -35,6 +41,12 @@ nav {
         text-transform: uppercase;
         font-weight: bold;
       }
+
+      a:active  {
+        font-size: 8pt;
+        transition: var(--click-on-article);
+
+    }
 
       ul {
         height: 100%;

@@ -14,8 +14,8 @@ root.render(
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/article" element={<Article />} />
-      <Route path="/creer-article" element={<CreateArticle />} />
-      <Route path="/modifier-article" element={<EditArticle />} />
+      {/* <Route path="/creer-article" element={<CreateArticle />} />
+      <Route path="/modifier-article" element={<EditArticle />} /> */}
     </Routes>
   </BrowserRouter>
 );

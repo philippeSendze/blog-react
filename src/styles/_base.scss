@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
 
 :root {
     --blue: #2a5ead;
     --white: #fafafa;
     --secondary-blue: #447ebe;
     --transition: 0.5s ease-in-out;
+    --click-on-article: 0.3s ease-in-out;
 }
 
 * {
@@ -25,8 +27,24 @@ ul {
     margin: 0 1.5rem;
 }
 
+.mx-1 {
+    margin: 0 1rem;
+}
+
+.my-1 {
+    margin: 1rem 0;
+}
+
 .py-3 {
     padding: 3rem 0;
+}
+
+.py-1 {
+    padding: 1rem 0;
+}
+
+.py-2 {
+    padding: 2rem 0;
 }
 
 
@@ -36,6 +54,7 @@ ul {
     .app {
         max-width: 100vw;
         overflow-x: hidden;
+        font-family: 'Roboto',sans-serif;
     }
 
     .app::-webkit-scrollbar {
