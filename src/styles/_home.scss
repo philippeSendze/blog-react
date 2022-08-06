@@ -45,3 +45,22 @@ input {
     }
   }
 }
+
+
+@media screen and (min-width:1000px) {
+  .list-articles-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
+  .search-container {
+    margin: 0 17rem;
+  }
+
+  .articles-block {
+    display: flex;
+    flex-direction: column;
+  }
+}

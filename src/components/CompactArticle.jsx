@@ -20,12 +20,14 @@ export default function CompactArticle() {
     <div className="py-1">
       <a href="/article">
       <div className="compact-article-container">
-        <img src={books} alt="Livres" width="100%" height="256" />
-        <h2 className="article-title">{title}</h2>
-        <h5>{firstLinesOfArticle}</h5>
-        <div className="date-and-author">
-          <h5>{date}</h5>
-          <h5>{author}</h5>
+        <img src={books} alt="Livres" width="100%" height="256" className="compact-img" />
+        <div className="infos-article">
+          <h2 className="article-title">{title}</h2>
+          <h5>{firstLinesOfArticle}</h5>
+          <div className="date-and-author">
+            <h5>{date}</h5>
+            <h5>{author}</h5>
+          </div>
         </div>
       </div>
       </a>

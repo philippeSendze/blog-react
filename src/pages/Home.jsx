@@ -6,28 +6,29 @@ import Footer from "../components/Footer";
 import React from "react";
 
 export default function Home() {
-  const articles = [1, 2, 3, 4]
+  const articles = [1, 2, 3, 4];
   const renderArticles = articles.map((index, article) => {
-    return <CompactArticle />
-  })
+    return <CompactArticle />;
+  });
   return (
     <>
-      <Navbar isHomePage={true}/>
+      <Navbar isHomePage={true} />
       <div className="mx-3">
         <div className="title-page">
           <StyloTenduLogo height="130" width="130" />
         </div>
-        <div className="search-container">
-          <input type="text" placeholder="Recherchez un article..." />
-          <div className="search-icon">
-            <BiSearch />
+        <div className="articles-block">
+          <div className="search-container">
+            <input type="text" placeholder="Recherchez un article..." />
+            <div className="search-icon">
+              <BiSearch />
+            </div>
           </div>
-        </div>
-        <div className="my-1">
-        {renderArticles}
+
+          <div className="list-articles-container my-1">{renderArticles}</div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
