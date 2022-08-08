@@ -1,55 +1,101 @@
 import Footer from "../components/Footer";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import books from "../assets/images/books.jpg";
-import { BsFacebook, BsTwitter } from "react-icons/bs";
+
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  LinkedinShareButton,
+} from "react-share";
+import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import { BiCopy } from "react-icons/bi";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { formattingDate } from "utils/article";
 
 export default function Article() {
-  const title =
-    "Comment lire davantage de livres peut te rendre meilleur en classe ?";
-  const date = "30 juil. 2022";
-  const author = "Philippe";
-  const textOfArticle =
-    "Le système scolaire n'a cessé de nous donner des oeuvres littéraires à lire, souvent suivies d'une évaluation sur table ou d'une fiche de lecture à rendre. /n hdbzqhfuozbq hdufobqhyubf zqbfuhzqb yzfuqib zqfyubf zyuhbfyuzqçbfyuzq fzyubfyqu fbzqyuifbyz zyfebzyqu fbzubifequbf. fbzhquofb, sdfhusqi dh eyhfbzfzeq bhfuizqb zbhuiab bhfe bhzuefib bhzufab bh auozb bhuaibf hu huabfiuzafb aubfhzafib. uqdsjiohvfqzuiofhuq hsdqbvqou fqhdbuibfq fzqubi fqzbifzguq fbziqbguq. zfbhiufab fbzhqui zfbhuiqb fhzuqoibfuqzoi fhzuqibfg zhfebiqzeifb fbzhuifbg fbzgifguqz bfzeifvg fzbgeiuqvfg.fbzqfzuiofb zfqybhyuzqb zbhfqi. bqfhuoib qvbhuo qhbfvu qvofuibfh bfquib bqvhuerob qvbuobvi. fhuqoihyqureç rzhuqiobf zfbhgiubfguiqz rzbhquibfrgqzui fhbzuig fzbhqyguifbg fgzyquibfgy fzqguyifgbqzu .";
+  const { articleId } = useParams();
+  console.log(articleId);
+  const [article, setArticle] = useState({
+    title: "",
+    date: "",
+    author: "",
+    image: "",
+    textOfArticle: "",
+  });
+
+  useEffect(() => {
+    axios.get(`http://localhost:4000/api/articles/${articleId}`).then((res) => {
+      setArticle({
+        title: res.data.title,
+        date: formattingDate(res.data.updatedAt),
+        author: res.data.author,
+        image: res.data.image,
+        textOfArticle: res.data.text,
+      });
+    });
+  }, []);
+
   const width = 100;
 
-    return (
+  return (
     <>
       <Navbar />
       <div className="article-container">
         <div className="article-mx-3">
-          <div className="article-container article-title">{title}</div>
+          <div className="article-container article-title">{article.title}</div>
           <div className="article-container date-and-author">
-            <h5>{date}</h5>
-            <h5>{author}</h5>
+            <h5>{article.date}</h5>
+            <h5>{article.author}</h5>
           </div>
-            <img
-              src={books}
-              alt="Livres"
-              width={width+"%"}
-              height={width*1.5+"%"}
-              className="article-image"
-              style={{ border: "1px solid red" }}
-            />
-          <div className="my-1">{textOfArticle}</div>
+          <img
+            src={article.image}
+            alt="Livres"
+            width={width + "%"}
+            height={width * 1.5 + "%"}
+            className="article-image"
+          />
+          <div
+            className="my-1"
+            style={{ whiteSpace: "pre-wrap" }}
+          >{`${article.textOfArticle}`}</div>
           <div className="share-article">
             <h5>Partager l'article sur vos réseaux : </h5>
             <ul className="ul-share-on-social-media">
               <li>
-                <a href="#">
-                  <BsFacebook color="#1877f2" />
-                </a>
+                <FacebookShareButton
+                  url={`http://localhost:3000/article/${articleId}`}
+                  title={article.title}
+                >
+                  <BsFacebook color="#1877f2" className="share-button" />
+                </FacebookShareButton>
               </li>
               <li>
-                <a href="#">
-                  <BsTwitter color="#1d9bf0" />
-                </a>
+                <TwitterShareButton
+                  url={`https://openclassrooms.com/fr/how-does-it-work`}
+                  title={article.title}
+                >
+                  <BsTwitter color="#1d9bf0" className="share-button" />
+                </TwitterShareButton>
               </li>
               <li>
-                <a href="#">
-                  <BiCopy color="gray" />
-                </a>
+                <LinkedinShareButton
+                  url={`https://openclassrooms.com/fr/how-does-it-work`}
+                  title={article.title}
+                >
+                  <BsLinkedin color="#0a66c2" className="share-button" />
+                </LinkedinShareButton>
+              </li>
+              <li>
+                <button
+                  onClick={() =>
+                    navigator.clipboard.writeText(
+                      `http://localhost:3000/article/${articleId}`
+                    )
+                  }
+                >
+                  <BiCopy color="gray" className="share-button" />
+                </button>
               </li>
             </ul>
           </div>

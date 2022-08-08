@@ -1,5 +1,5 @@
 input {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .title-page {
@@ -46,21 +46,27 @@ input {
   }
 }
 
+.border-top-article {
+  border-style: none none solid;
+  border-color: var(--secondary-blue);
+}
 
-@media screen and (min-width:1000px) {
+.articles-block {
+  min-height: 74rem;
+}
+
+@media screen and (min-width: 1000px) {
   .list-articles-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-   }
-
-  .search-container {
-    margin: 0 17rem;
   }
 
-  .articles-block {
-    display: flex;
-    flex-direction: column;
+  // // .search-container {
+  // //   margin: 0 17rem;
+  // // }
+
+  .border-top-article {
+    margin: 0 10rem;
   }
 }

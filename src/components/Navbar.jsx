@@ -11,8 +11,14 @@ export default function Navbar(props) {
   const isHomePage = props.isHomePage;
   return (
     <nav>
-      <div className={isHomePage ? "container py-1" : "container-with-logo py-1"}>
-        {!isHomePage && <StyloTenduLogo height="55" width="55" />}
+      <div
+        className={isHomePage ? "container py-1" : "container-with-logo py-1"}
+      >
+        {!isHomePage && (
+          <a href="/">
+            <StyloTenduLogo height="55" width="55" />
+          </a>
+        )}
         <div className="links-container" onClick={(e) => e.stopPropagation()}>
           <div className="toggle">
             {navState ? (

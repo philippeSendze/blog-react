@@ -1,6 +1,18 @@
 nav {
   transition: var(--transition);
 
+  a {
+    text-decoration: none;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  a:active {
+    font-size: 8pt;
+    transition: var(--click-on-article);
+  }
+
   .container {
     display: flex;
     justify-content: flex-end;
@@ -33,18 +45,6 @@ nav {
       transition: var(--transition);
       opacity: 0;
       background-color: var(--blue);
-
-      a {
-        text-decoration: none;
-        color: var(--white);
-        text-transform: uppercase;
-        font-weight: bold;
-      }
-
-      a:active {
-        font-size: 8pt;
-        transition: var(--click-on-article);
-      }
 
       ul {
         height: 100%;

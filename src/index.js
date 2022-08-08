@@ -13,7 +13,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/article" element={<Article />} />
+      <Route path="/article/:articleId" element={<Article />} />
       {/* <Route path="/creer-article" element={<CreateArticle />} />
       <Route path="/modifier-article" element={<EditArticle />} /> */}
     </Routes>
