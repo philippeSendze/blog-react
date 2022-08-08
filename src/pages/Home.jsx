@@ -32,9 +32,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div style={{ minHeight: "100vh" }}>
       <Navbar isHomePage={true} />
-      <div className="mx-3">
+      <div className="mx-3" style={{ minHeight: "91vh" }}>
         <div className="title-page">
           <StyloTenduLogo height="130" width="130" />
         </div>
