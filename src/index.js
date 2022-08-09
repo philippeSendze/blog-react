@@ -7,17 +7,20 @@ import Home from "./pages/Home.jsx";
 import Article from "./pages/Article";
 import CreateArticle from "./pages/CreateArticle";
 import EditArticle from "./pages/EditArticle";
+import { HelmetProvider } from "react-helmet-async";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/article/:articleId" element={<Article />} />
-      {/* <Route path="/creer-article" element={<CreateArticle />} />
+  <HelmetProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/article/:articleId" element={<Article />} />
+        {/* <Route path="/creer-article" element={<CreateArticle />} />
       <Route path="/modifier-article" element={<EditArticle />} /> */}
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
+  </HelmetProvider>
 );
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

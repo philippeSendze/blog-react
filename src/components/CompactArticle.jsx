@@ -1,12 +1,10 @@
-import Article from "pages/Article";
 import React from "react";
 import { Link } from "react-router-dom";
-import books from "../assets/images/books.jpg";
+import { firstLinesOfArticle } from "utils/article";
+
 
 export default function CompactArticle(props) {
   const { id, title, author, text, date, image } = props;
-
-  const firstLinesOfArticle = text.slice(0, 119).concat("...");
 
   return (
     <div className="py-1">
@@ -21,7 +19,7 @@ export default function CompactArticle(props) {
           />
           <div className="infos-article">
             <h2 className="article-title">{title}</h2>
-            <h5>{firstLinesOfArticle}</h5>
+            <h5>{firstLinesOfArticle(text)}</h5>
             <div className="date-and-author">
               <h5>{date}</h5>
               <h5>{author}</h5>

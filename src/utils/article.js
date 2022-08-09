@@ -1,3 +1,5 @@
+export const firstLinesOfArticle = (text) => text.slice(0, 119).concat("...");
+
 export const formattingDate = (date) => {
   const months = new Map();
   months.set("01", "janvier");
