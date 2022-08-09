@@ -38,7 +38,7 @@ export default function Home() {
     <>
       <Helmet>
         <title>Accueil - Stylo tendu</title>
-        <meta name="description" content="Blog traitant de conseils en milieu scolaire au Gabon en particulier et en Afrique francophone en général." />
+        <meta name="description" content="Blog autour du milieu scolaire au Gabon en particulier et en Afrique francophone en général." />
         <link rel="canonical" href="/" />
       </Helmet>
       <div style={{ minHeight: "100vh" }}>
