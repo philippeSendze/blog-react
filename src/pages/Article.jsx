@@ -25,7 +25,7 @@ export default function Article() {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/articles/${articleId}`).then((res) => {
+    axios.get(`https://stylo-tendu-backend.herokuapp.com/api/articles/${articleId}`).then((res) => {
       setArticle({
         title: res.data.title,
         date: formattingDate(res.data.updatedAt),

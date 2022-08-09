@@ -25,7 +25,7 @@ export default function Home() {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/articles`).then((res) => {
+    axios.get(`https://stylo-tendu-backend.herokuapp.com/api/articles`).then((res) => {
       const reversedArticles = res.data.reverse();
       setArticles(reversedArticles);
     });
