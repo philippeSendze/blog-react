@@ -15,6 +15,7 @@ import { firstLinesOfArticle, formattingDate } from "utils/article";
 import { Helmet } from "react-helmet-async";
 
 export default function Article() {
+  const currentURL = window.location.href;
   const { articleId } = useParams();
 
   const [article, setArticle] = useState({
@@ -47,7 +48,10 @@ export default function Article() {
     <>
       <Helmet>
         <title>{article.title}</title>
-        <meta name="description" content={firstLinesOfArticle(article.textOfArticle)} />
+        <meta
+          name="description"
+          content={firstLinesOfArticle(article.textOfArticle)}
+        />
         <link rel="canonical" href={`${articleId}`} />
       </Helmet>
       <>
@@ -76,36 +80,23 @@ export default function Article() {
               <h5>Partager l'article sur vos réseaux : </h5>
               <ul className="ul-share-on-social-media">
                 <li>
-                  <FacebookShareButton
-                    url={`http://localhost:3000/article/${articleId}`}
-                    title={article.title}
-                  >
+                  <FacebookShareButton url={currentURL} title={article.title}>
                     <BsFacebook color="#1877f2" className="share-button" />
                   </FacebookShareButton>
                 </li>
                 <li>
-                  <TwitterShareButton
-                    url={`https://openclassrooms.com/fr/how-does-it-work`}
-                    title={article.title}
-                  >
+                  <TwitterShareButton url={currentURL} title={article.title}>
                     <BsTwitter color="#1d9bf0" className="share-button" />
                   </TwitterShareButton>
                 </li>
                 <li>
-                  <LinkedinShareButton
-                    url={`https://openclassrooms.com/fr/how-does-it-work`}
-                    title={article.title}
-                  >
+                  <LinkedinShareButton url={currentURL} title={article.title}>
                     <BsLinkedin color="#0a66c2" className="share-button" />
                   </LinkedinShareButton>
                 </li>
                 <li>
                   <button
-                    onClick={() =>
-                      navigator.clipboard.writeText(
-                        `http://localhost:3000/article/${articleId}`
-                      )
-                    }
+                    onClick={() => navigator.clipboard.writeText(currentURL)}
                   >
                     <BiCopy color="gray" className="share-button" />
                   </button>

@@ -46,12 +46,12 @@ export default function Navbar(props) {
                 <span>Rejoignez-nous sur:</span>
                 <ul className="ul-social-media">
                   <li>
-                    <a href="#">
+                    <a href="https://www.facebook.com/Stylo-tendu-100308959464668/">
                       <BsFacebook />
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="https://twitter.com/StyloTendu">
                       <BsTwitter />
                     </a>
                   </li>
