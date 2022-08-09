@@ -15,7 +15,7 @@ import { formattingDate } from "utils/article";
 
 export default function Article() {
   const { articleId } = useParams();
-  console.log(articleId);
+
   const [article, setArticle] = useState({
     title: "",
     date: "",
@@ -57,7 +57,7 @@ export default function Article() {
           />
           <div
             className="my-1"
-            style={{ whiteSpace: "pre-wrap" }}
+            style={{ whiteSpace: "pre-wrap", fontSize: '14pt'}}
           >{`${article.textOfArticle}`}</div>
           <div className="share-article">
             <h5>Partager l'article sur vos réseaux : </h5>
