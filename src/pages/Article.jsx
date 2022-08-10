@@ -9,13 +9,15 @@ import {
 } from "react-share";
 import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import { BiCopy } from "react-icons/bi";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { firstLinesOfArticle, formattingDate } from "utils/article";
 import { Helmet } from "react-helmet-async";
 
 export default function Article() {
-  const currentURL = window.location.href;
+  let location = useLocation();
+  const currentURL = "https://stylotendu.herokuapp.com" + location.pathname;
+
   const { articleId } = useParams();
 
   const [article, setArticle] = useState({
@@ -53,6 +55,16 @@ export default function Article() {
           content={firstLinesOfArticle(article.textOfArticle)}
         />
         <link rel="canonical" href={`${articleId}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={article.title} />
+        <meta property="og:image" content={article.image} />
+        <meta content="image/*" property="og:image:type" />
+        <meta property="og:url" content={currentURL} />
+        <meta
+          property="og:description"
+          content={firstLinesOfArticle(article.textOfArticle)}
+        />
+        <meta name="twitter:card" content={article.image} />
       </Helmet>
       <>
         <Navbar />
