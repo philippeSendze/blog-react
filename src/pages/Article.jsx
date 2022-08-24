@@ -74,8 +74,8 @@ export default function Article() {
               {article.title}
             </div>
             <div className="article-container date-and-author">
-              <h5>{article.date}</h5>
-              <h5>{article.author}</h5>
+             <h5></h5> 
+             <h5>{article.date}</h5>
             </div>
             <img
               src={article.image}
@@ -85,10 +85,14 @@ export default function Article() {
               className="article-image"
             />
             <div
-              className="my-1"
-              style={{ whiteSpace: "pre-wrap", fontSize: "14pt" }}
+              style={{
+                whiteSpace: "pre-wrap",
+                fontSize: "14pt",
+                margin: "2.5rem 0 4.5rem 0",
+                lineHeight: "1.6",
+              }}
             >{`${article.textOfArticle}`}</div>
-            <div className="share-article">
+            {/* <div className="share-article">
               <h5>Partager l'article sur vos réseaux : </h5>
               <ul className="ul-share-on-social-media">
                 <li>
@@ -114,7 +118,7 @@ export default function Article() {
                   </button>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </>
