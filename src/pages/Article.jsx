@@ -75,7 +75,7 @@ export default function Article() {
             </div>
             <div className="article-container date-and-author">
              <h5></h5> 
-             <h5></h5>
+             <h5>{article.date}</h5>
             </div>
             <img
               src={article.image}

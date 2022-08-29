@@ -21,7 +21,7 @@ export default function CompactArticle(props) {
             <h5 style={{ lineHeight: "1.6" }}>{firstLinesOfArticle(text)}</h5>
             <div className="date-and-author">
               <h5></h5>
-              <h5></h5>
+              <h5>{date}</h5>
             </div>
           </div>
         </div>
