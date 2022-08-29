@@ -1,4 +1,4 @@
-export const firstLinesOfArticle = (text) => text.slice(0, 119).concat("...");
+export const firstLinesOfArticle = (text) => text.slice(0, 150).concat("...");
 
 export const formattingDate = (date) => {
   const months = new Map();
