@@ -36,7 +36,7 @@ export default function Article() {
       .then((res) => {
         setArticle({
           title: res.data.title,
-          date: formattingDate(res.data.updatedAt),
+          date: formattingDate(res.data.createdAt),
           author: res.data.author,
           image: res.data.image,
           textOfArticle: res.data.text,

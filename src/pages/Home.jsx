@@ -20,7 +20,7 @@ export default function Home() {
         author={article.author}
         image={article.image}
         text={article.text}
-        date={formattingDate(article.updatedAt)}
+        date={formattingDate(article.createdAt)}
       />
     );
   });
